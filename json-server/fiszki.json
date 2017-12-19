@@ -1,0 +1,24 @@
+{
+  "fiszki": [
+    {
+      "question": "Jak nazywa się Gaweł",
+      "answer": "Gawałkiewicz",
+      "id": 1
+    },
+    {
+      "question": "Ile lat ma Adrian",
+      "answer": "24",
+      "id": 2
+    },
+    {
+      "question": "Ile to jest 4x4",
+      "answer": "16",
+      "id": 3
+    },
+    {
+      "question": "Ile jest osób na kursie?",
+      "answer": "7",
+      "id": 4
+    }
+  ]
+}
