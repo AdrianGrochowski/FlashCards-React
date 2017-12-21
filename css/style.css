@@ -1,9 +1,42 @@
 body {
-  background: #43cea2;
-  background: -webkit-gradient(linear, left top, left bottom, from(#185a9d), to(#43cea2));
-  background: linear-gradient(to bottom, #185a9d, #43cea2);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(14deg, #00b485, #13c8b8);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 45s ease infinite;
+  animation: AnimationName 45s ease infinite;
   font-family: 'Raleway', sans-serif;
   height: 100vh; }
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 17% 0%; }
+  50% {
+    background-position: 84% 100%; }
+  100% {
+    background-position: 17% 0%; } }
+
+@keyframes AnimationName {
+  0% {
+    background-position: 17% 0%; }
+  50% {
+    background-position: 84% 100%; }
+  100% {
+    background-position: 17% 0%; } }
+
+.routerMenu li {
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 700; }
+
+.indexLink {
+  text-decoration: none;
+  color: black; }
+
+.menu {
+  line-height: 50px; }
 
 .menu h1 {
   display: inline-block; }
@@ -29,17 +62,65 @@ body {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.cards {
+input[type=text] {
+  background-color: rgba(9, 190, 159, 0.6);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-family: 'Raleway', sans-serif; }
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 100px;
   border-radius: 5px;
-  width: 400px;
-  height: 300px;
+  color: #09BE9F;
+  width: 500px;
+  height: 400px;
+  background: linear-gradient(14deg, #414141, #868686);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite; }
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 17% 0%; }
+  50% {
+    background-position: 84% 100%; }
+  100% {
+    background-position: 17% 0%; } }
+
+@keyframes AnimationName {
+  0% {
+    background-position: 17% 0%; }
+  50% {
+    background-position: 84% 100%; }
+  100% {
+    background-position: 17% 0%; } }
+
+.cards {
+  margin-top: 100px;
+  border-radius: 5px;
+  width: 500px;
+  height: 400px;
   font-size: 25px;
   font-weight: 700;
   color: white;
-  margin: 0 auto;
-  background: #185a9d;
-  background: -webkit-gradient(linear, left bottom, left top, from(#185a9d), to(#43cea2));
-  background: linear-gradient(to top, #185a9d, #43cea2);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   display: -webkit-box;
@@ -52,7 +133,27 @@ body {
       -ms-flex-align: center;
           align-items: center;
   overflow: auto;
-  text-align: center; }
+  text-align: center;
+  background: linear-gradient(14deg, #414141, #868686);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite; }
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 17% 0%; }
+  50% {
+    background-position: 84% 100%; }
+  100% {
+    background-position: 17% 0%; } }
+
+@keyframes AnimationName {
+  0% {
+    background-position: 17% 0%; }
+  50% {
+    background-position: 84% 100%; }
+  100% {
+    background-position: 17% 0%; } }
 
 .inner {
   -webkit-transform: translateZ(40px);
@@ -84,9 +185,6 @@ body {
   font-weight: 700;
   color: white;
   margin: 0 auto;
-  background: #185a9d;
-  background: -webkit-gradient(linear, left bottom, left top, from(#185a9d), to(#43cea2));
-  background: linear-gradient(to top, #185a9d, #43cea2);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   display: -webkit-box;
@@ -109,7 +207,25 @@ body {
   100% {
     opacity: 1;
     -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg); } }
+            transform: rotateY(0deg); }
+  background: linear-gradient(14deg, #414141, #868686);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite;
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 17% 0%; }
+    50% {
+      background-position: 84% 100%; }
+    100% {
+      background-position: 17% 0%; } }
+  @keyframes AnimationName {
+    0% {
+      background-position: 17% 0%; }
+    50% {
+      background-position: 84% 100%; }
+    100% {
+      background-position: 17% 0%; } } }
 
 @keyframes roll {
   0% {
@@ -119,15 +235,24 @@ body {
   100% {
     opacity: 1;
     -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg); } }
-
-table {
-  color: white;
-  border: 1px solid grey; }
-
-td {
-  border: 1px solid grey;
-  text-align: center;
-  padding: 4px; }
+            transform: rotateY(0deg); }
+  background: linear-gradient(14deg, #414141, #868686);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite;
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 17% 0%; }
+    50% {
+      background-position: 84% 100%; }
+    100% {
+      background-position: 17% 0%; } }
+  @keyframes AnimationName {
+    0% {
+      background-position: 17% 0%; }
+    50% {
+      background-position: 84% 100%; }
+    100% {
+      background-position: 17% 0%; } } }
 
 /*# sourceMappingURL=style.css.map */

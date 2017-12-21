@@ -11,20 +11,24 @@ import {Router,
 import Main from './Main.jsx';
 import Cards from './Cards.jsx';
 import List from './List.jsx';
+import Game from './Game.jsx';
+
 
 class Template extends React.Component {
     render() {
       const style = {
-        backgroundColor: "lightgreen"
+        color: "rgb(0, 73, 70)",
+        borderBottom: "1px solid black"
       };
         return (
             <div>
               <div className="menu">
-                <h1>FLASHCARDS</h1>
-                <ul>
-                    <li><IndexLink to="/" activeStyle={ style }>ADD NEW CARDS</IndexLink></li>
-                    <li><IndexLink to="/cards" activeStyle={ style }>FLASHCARDS</IndexLink></li>
-                    <li><IndexLink to="/list" activeStyle={ style }>EDIT</IndexLink></li>
+                <h1 style={{marginRight:"20px"}}>FLASHCARDS</h1>
+                <ul className="routerMenu">
+                    <li><IndexLink to="/" activeStyle={ style } className="indexLink">ADD NEW CARDS</IndexLink></li>
+                    <li><IndexLink to="/cards" activeStyle={ style } className="indexLink">FLASHCARDS</IndexLink></li>
+                    <li><IndexLink to="/list" activeStyle={ style } className="indexLink">EDIT</IndexLink></li>
+                    <li><IndexLink to="/game" activeStyle={ style } className="indexLink">PLAY</IndexLink></li>
                 </ul>
               </div>
                 {this.props.children}
@@ -42,6 +46,7 @@ class App extends React.Component {
             <IndexRoute component={Main} />
             <Route path='/cards' component={Cards} />
             <Route path='/list' component={List} />
+            <Route path='/game' component={Game} />
       </Route>
     </Router>
     )

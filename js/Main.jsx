@@ -34,10 +34,12 @@ clearForm = () => {
 
 render() {
   return (
-    <div className={"main"}>
-      <Question setQuestion={this.setQuestion} question={this.state.question}/>
-      <Answer setAnswer={this.setAnswer} answer={this.state.answer}/>
-      <Button clearForm={this.clearForm} answer={this.state.answer} question={this.state.question} />
+    <div className="main">
+      <div className="home">
+        <Question setQuestion={this.setQuestion} question={this.state.question}/>
+        <Answer setAnswer={this.setAnswer} answer={this.state.answer}/>
+        <Button clearForm={this.clearForm} answer={this.state.answer} question={this.state.question} />
+      </div>
     </div>
   )
 }

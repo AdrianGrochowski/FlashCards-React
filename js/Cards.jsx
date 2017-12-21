@@ -13,7 +13,6 @@ class Cards extends React.Component {
 
   componentDidUpdate() {
 
-    console.log($('.cards'));
         $('.cards').tilt({
             glare: true,
             maxGlare: .1
@@ -58,7 +57,7 @@ class Cards extends React.Component {
     let search = true;
 
     if (this.counter === this.state.data.length + 1) {
-      alert("Wyczerpałeś fiszki, dodaj nowe!");
+      alert("You are out of FLASHCARDS, add new ones");
       return
     }
 
@@ -100,8 +99,8 @@ class Cards extends React.Component {
 
     return (
       <div className="main">
-        <div className={"cards"} data-tilt="data-tilt">
-          <div className={"inner"}>
+        <div className="cards" data-tilt="data-tilt">
+          <div className="inner">
             <p>
               {this.state.question}
             </p>

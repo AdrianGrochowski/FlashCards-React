@@ -13697,6 +13697,10 @@ var _List = __webpack_require__(247);
 
 var _List2 = _interopRequireDefault(_List);
 
+var _Game = __webpack_require__(248);
+
+var _Game2 = _interopRequireDefault(_Game);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13718,7 +13722,8 @@ var Template = function (_React$Component) {
         key: 'render',
         value: function render() {
             var style = {
-                backgroundColor: "lightgreen"
+                color: "rgb(0, 73, 70)",
+                borderBottom: "1px solid black"
             };
             return _react2.default.createElement(
                 'div',
@@ -13728,18 +13733,18 @@ var Template = function (_React$Component) {
                     { className: 'menu' },
                     _react2.default.createElement(
                         'h1',
-                        null,
+                        { style: { marginRight: "20px" } },
                         'FLASHCARDS'
                     ),
                     _react2.default.createElement(
                         'ul',
-                        null,
+                        { className: 'routerMenu' },
                         _react2.default.createElement(
                             'li',
                             null,
                             _react2.default.createElement(
                                 _reactRouter.IndexLink,
-                                { to: '/', activeStyle: style },
+                                { to: '/', activeStyle: style, className: 'indexLink' },
                                 'ADD NEW CARDS'
                             )
                         ),
@@ -13748,7 +13753,7 @@ var Template = function (_React$Component) {
                             null,
                             _react2.default.createElement(
                                 _reactRouter.IndexLink,
-                                { to: '/cards', activeStyle: style },
+                                { to: '/cards', activeStyle: style, className: 'indexLink' },
                                 'FLASHCARDS'
                             )
                         ),
@@ -13757,8 +13762,17 @@ var Template = function (_React$Component) {
                             null,
                             _react2.default.createElement(
                                 _reactRouter.IndexLink,
-                                { to: '/list', activeStyle: style },
+                                { to: '/list', activeStyle: style, className: 'indexLink' },
                                 'EDIT'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.IndexLink,
+                                { to: '/game', activeStyle: style, className: 'indexLink' },
+                                'PLAY'
                             )
                         )
                     )
@@ -13791,7 +13805,8 @@ var App = function (_React$Component2) {
                     { path: '/', component: Template },
                     _react2.default.createElement(_reactRouter.IndexRoute, { component: _Main2.default }),
                     _react2.default.createElement(_reactRouter.Route, { path: '/cards', component: _Cards2.default }),
-                    _react2.default.createElement(_reactRouter.Route, { path: '/list', component: _List2.default })
+                    _react2.default.createElement(_reactRouter.Route, { path: '/list', component: _List2.default }),
+                    _react2.default.createElement(_reactRouter.Route, { path: '/game', component: _Game2.default })
                 )
             );
         }
@@ -27209,10 +27224,14 @@ var Main = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: "main" },
-        _react2.default.createElement(_Question2.default, { setQuestion: this.setQuestion, question: this.state.question }),
-        _react2.default.createElement(_Answer2.default, { setAnswer: this.setAnswer, answer: this.state.answer }),
-        _react2.default.createElement(_Button2.default, { clearForm: this.clearForm, answer: this.state.answer, question: this.state.question })
+        { className: 'main' },
+        _react2.default.createElement(
+          'div',
+          { className: 'home' },
+          _react2.default.createElement(_Question2.default, { setQuestion: this.setQuestion, question: this.state.question }),
+          _react2.default.createElement(_Answer2.default, { setAnswer: this.setAnswer, answer: this.state.answer }),
+          _react2.default.createElement(_Button2.default, { clearForm: this.clearForm, answer: this.state.answer, question: this.state.question })
+        )
       );
     }
   }]);
@@ -27523,7 +27542,7 @@ var Cards = function (_React$Component) {
       var search = true;
 
       if (_this.counter === _this.state.data.length + 1) {
-        alert("Wyczerpałeś fiszki, dodaj nowe!");
+        alert("You are out of FLASHCARDS, add new ones");
         return;
       }
 
@@ -27558,7 +27577,6 @@ var Cards = function (_React$Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
 
-      console.log($('.cards'));
       $('.cards').tilt({
         glare: true,
         maxGlare: .1
@@ -27601,10 +27619,10 @@ var Cards = function (_React$Component) {
         { className: 'main' },
         _react2.default.createElement(
           'div',
-          { className: "cards", 'data-tilt': 'data-tilt' },
+          { className: 'cards', 'data-tilt': 'data-tilt' },
           _react2.default.createElement(
             'div',
-            { className: "inner" },
+            { className: 'inner' },
             _react2.default.createElement(
               'p',
               null,
@@ -27808,6 +27826,187 @@ var List = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = List;
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(25);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Game = function (_React$Component) {
+  _inherits(Game, _React$Component);
+
+  function Game() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Game);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Game.__proto__ || Object.getPrototypeOf(Game)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      data: []
+    }, _this.clickQuestion = function (e) {
+      _this.question = e.target.dataset.id;
+      console.log(_this.question, _this.answer);
+      if (_this.answer === _this.question) {
+        alert('Super');
+        _this.question = 0;
+        _this.answer = 0;
+        var el = document.querySelectorAll('[data-id="' + e.target.dataset.id + '"]');
+        el.forEach(function (e, i) {
+          e.style.backgroundColor = "lightgreen";
+        });
+      } else if (_this.question > 0 && _this.answer > 0) {
+        _this.question = 0;
+        _this.answer = 0;
+      }
+    }, _this.clickAnswer = function (e) {
+      _this.answer = e.target.dataset.id;
+      console.log(_this.question, _this.answer);
+      if (_this.answer === _this.question) {
+        _this.question = 0;
+        _this.answer = 0;
+        var el = document.querySelectorAll('[data-id="' + e.target.dataset.id + '"]');
+        console.log(el);
+        el.forEach(function (e, i) {
+          e.style.backgroundColor = "lightgreen";
+        });
+      } else if (_this.question > 0 && _this.answer > 0) {
+        _this.question = 0;
+        _this.answer = 0;
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Game, [{
+    key: 'loadData',
+    value: function loadData() {
+      var _this2 = this;
+
+      fetch('http://localhost:3000/fiszki', {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(function (resp) {
+        return resp.json();
+      }).then(function (data) {
+        console.log(data);
+        _this2.setState({ data: data });
+      });
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.loadData();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var randomIndex = [];
+
+      var rows = this.state.data.map(function (e, i) {
+
+        var search = true;
+        var rand1 = 0;
+
+        while (search) {
+          rand1 = Math.floor(Math.random() * _this3.state.data.length);
+
+          if (randomIndex.indexOf(rand1) === -1) {
+            randomIndex.push(rand1);
+            search = false;
+          }
+        }
+
+        return _react2.default.createElement(
+          'tr',
+          { key: i },
+          _react2.default.createElement(
+            'td',
+            { onClick: _this3.clickQuestion, 'data-id': _this3.state.data[rand1].id },
+            ' ',
+            _this3.state.data[rand1].question,
+            ' '
+          ),
+          _react2.default.createElement(
+            'td',
+            { onClick: _this3.clickAnswer, 'data-id': _this3.state.data[i].id },
+            ' ',
+            e.answer,
+            ' '
+          )
+        );
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: "main" },
+        _react2.default.createElement(
+          'table',
+          null,
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'td',
+                null,
+                'Question'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                'Answer'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            rows
+          )
+        )
+      );
+    }
+  }]);
+
+  return Game;
+}(_react2.default.Component);
+
+exports.default = Game;
 
 /***/ })
 /******/ ]);
