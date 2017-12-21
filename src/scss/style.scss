@@ -1,0 +1,102 @@
+body {
+  background: #43cea2;
+  background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2);
+  background: linear-gradient(to bottom, #185a9d, #43cea2);
+  font-family: 'Raleway', sans-serif;
+  height: 100vh;
+}
+
+.menu h1 {
+  display: inline-block;
+}
+
+.menu ul {
+  display: inline-block;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cards {
+  border-radius: 5px;
+  width: 400px;
+  height: 300px;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto;
+  background: #185a9d;
+  background: -webkit-linear-gradient(to top, #185a9d, #43cea2);
+  background: linear-gradient(to top, #185a9d, #43cea2);
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:auto;
+  text-align: center;
+}
+
+.inner {
+  transform: translateZ(40px);
+}
+
+.fade {
+  transform: translateZ(40px);
+  animation: fade 3.5s ease;
+}
+@keyframes fade {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+.roll {
+  border-radius: 5px;
+  width: 400px;
+  height: 300px;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto;
+  background: #185a9d;
+  background: -webkit-linear-gradient(to top, #185a9d, #43cea2);
+  background: linear-gradient(to top, #185a9d, #43cea2);
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: roll 1.5s ease;
+}
+@keyframes roll {
+  0% {
+    opacity: 0;
+    transform: rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+table {
+  color:white;
+  border: 1px solid grey;
+}
+
+td {
+  border: 1px solid grey;
+  text-align: center;
+  padding: 4px;
+}

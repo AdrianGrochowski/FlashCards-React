@@ -56,8 +56,8 @@ class Question extends React.Component {
   render() {
     return (
       <div>
-        <input onChange={this.changeInput} type="text" name="text" value={this.props.question} />
         <h1>Your question: {this.props.question}</h1>
+        <input onChange={this.changeInput} type="text" name="text" value={this.props.question} />
       </div>
     )
   }
@@ -73,8 +73,8 @@ class Answer extends React.Component {
 render() {
   return (
     <div>
-      <input onChange={this.changeInput} type="text" name="text" value={this.props.answer}/>
       <h1>Your answer: {this.props.answer}</h1>
+      <input onChange={this.changeInput} type="text" name="text" value={this.props.answer}/>
     </div>
   )
 }
@@ -209,16 +209,19 @@ this.setState ({
     </div>
     )
   }
+
 }
+
 
 
 class App extends React.Component {
   render() {
     return (
-    <div>
-    <Create />
-    <Cards />
-    </div>
+
+                  <Router history={hashHistory}>
+                      <Route path='/' component={Create} />
+                      <Route path='/cards' component={Cards} />
+                  </Router>
     )
   }
 }

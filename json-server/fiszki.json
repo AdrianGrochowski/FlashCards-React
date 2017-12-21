@@ -1,16 +1,6 @@
 {
   "fiszki": [
     {
-      "question": "Jak nazywa się Gaweł",
-      "answer": "Gawałkiewicz",
-      "id": 1
-    },
-    {
-      "question": "Ile lat ma Adrian",
-      "answer": "24",
-      "id": 2
-    },
-    {
       "question": "Ile to jest 4x4",
       "answer": "16",
       "id": 3
@@ -19,6 +9,21 @@
       "question": "Ile jest osób na kursie?",
       "answer": "7",
       "id": 4
+    },
+    {
+      "question": "Kto jest prezydentem Polski w 1993 na wiosne?",
+      "answer": "Duda",
+      "id": 5
+    },
+    {
+      "question": "Ile koni ma Golf GTI?",
+      "answer": "240",
+      "id": 6
+    },
+    {
+      "question": "Ile Dagmara ma lat?",
+      "answer": "27",
+      "id": 7
     }
   ]
 }
