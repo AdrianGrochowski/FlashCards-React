@@ -13,10 +13,7 @@ class Cards extends React.Component {
 
   componentDidUpdate() {
 
-        $('.cards').tilt({
-            glare: true,
-            maxGlare: .1
-        })
+    $('.cards').tilt({glare: true, maxGlare: .1})
 
   }
 
@@ -31,8 +28,9 @@ class Cards extends React.Component {
         'Content-Type': 'application/json'
       }
     }).then(resp => resp.json()).then(data => {
-      console.log(data);
-      this.setState({data: data})
+      this.setState({
+        data: data
+      }, this.nextQuestion)
     });
 
   }
@@ -53,7 +51,6 @@ class Cards extends React.Component {
     inner.classList.remove("fade");
 
     this.counter++
-    console.log(this.counter);
     let search = true;
 
     if (this.counter === this.state.data.length + 1) {
@@ -79,10 +76,10 @@ class Cards extends React.Component {
 
   showAnswer = () => {
 
-  let div = document.querySelector(".cards");
-  let inner = document.querySelector(".inner");
-  div.classList.add("roll");
-  inner.classList.add("fade");
+    let div = document.querySelector(".cards");
+    let inner = document.querySelector(".inner");
+    div.classList.add("roll");
+    inner.classList.add("fade");
 
     this.setState({
       answer: this.state.data[this.randomCard].answer,
@@ -94,26 +91,31 @@ class Cards extends React.Component {
   render() {
 
     if (this.state.data.length === 0) {
-      return <p style={{textAlign:"center"}}>Loading...</p>
+      return <p style={{
+          textAlign: "center",
+          verticalAlign: "center"
+        }}>Loading...</p>
     }
 
-    return (
-      <div className="main">
-        <div className="cards" data-tilt="data-tilt">
-          <div className="inner">
-            <p>
-              {this.state.question}
-            </p>
-            <p>
-              {this.state.answer}
-            </p>
-          </div>
+    return (<div className="main">
+      <div className="cards" data-tilt="data-tilt">
+        <div className="inner">
+          <p>
+            {this.state.question}
+          </p>
+          <p>
+            {this.state.answer}
+          </p>
         </div>
-        <br/>
-        <button onClick={this.showAnswer} style={{margin:"5px"}}>Show answer</button>
-        <button onClick={this.nextQuestion} style={{margin:"5px"}}>Next question</button>
-        <br/>
-        <IndexLink to="/">Add new Card!</IndexLink>
+      </div>
+      <div className="next_show">
+        <button className="main_btn" onClick={this.nextQuestion} style={{
+            margin: "5px"
+          }}>Next question</button>
+        <button className="main_btn" onClick={this.showAnswer} style={{
+            margin: "5px"
+          }}>Show answer</button>
+      </div>
     </div>)
   }
 

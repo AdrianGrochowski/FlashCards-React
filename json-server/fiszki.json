@@ -1,29 +1,29 @@
 {
   "fiszki": [
     {
-      "question": "Ile to jest 4x4",
-      "answer": "16",
-      "id": 3
+      "question": "Ile jest rodzajów kursów w CodersLab?",
+      "answer": "9",
+      "id": 7
+    },
+    {
+      "question": "Ile trwa kurs FrontEnd?",
+      "answer": "320h",
+      "id": 8
+    },
+    {
+      "question": "Jak długi jest prework?",
+      "answer": "60h",
+      "id": 9
+    },
+    {
+      "question": "Jak ma na nazwisko Gaweł?",
+      "answer": "Gawałkiewicz",
+      "id": 10
     },
     {
       "question": "Ile jest osób na kursie?",
-      "answer": "7",
-      "id": 4
-    },
-    {
-      "question": "Kiedy była bitwa pod Grunwaldem?",
-      "answer": "1410",
-      "id": 5
-    },
-    {
-      "question": "Ile koni ma Golf GTI?",
-      "answer": "240",
-      "id": 6
-    },
-    {
-      "question": "Ile Dagmara ma lat?",
-      "answer": "27",
-      "id": 7
+      "answer": "6",
+      "id": 11
     }
   ]
 }

@@ -19,31 +19,37 @@ class Button extends React.Component {
 
       };
 
-      fetch('http://localhost:3000/fiszki', {
-      method : 'POST',
-      headers : {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(obj)
-    })
-    .then( resp => resp.json())
-    .then( data => {
-    console.log( data );
-    });
+    if (this.props.question != "" || this.props.answer != "") {
+        fetch('http://localhost:3000/fiszki', {
+        method : 'POST',
+        headers : {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+      })
+      .then( resp => resp.json())
+      .then( data => {
+      console.log( data );
+      });
 
-    // czyscimy formularze
-    this.props.clearForm();
+      // czyscimy formularze
+      this.props.clearForm();
+    } else {
+        e.target.style.backgroundColor = "rgb(212, 93, 93)";
+        var el = e.target;
+      setTimeout(() => {
+        el.style.backgroundColor = "";
+      }, 500);
+    }
 
   }
 
 
   render() {
     return (
-      <div>
-        <button onClick={this.click}>Add new Card</button>
-        <br/>
-        <IndexLink to="/cards">Let's learn!</IndexLink>
+      <div style={{textAlign:"center"}}>
+        <button className="main_btn" onClick={this.click}>Add new Card</button>
       </div>
     )
   }

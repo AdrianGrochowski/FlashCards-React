@@ -13,7 +13,6 @@ loadData () {
       'Content-Type': 'application/json'
     }
   }).then(resp => resp.json()).then(data => {
-    console.log(data);
     this.setState({
       data: data
     })
@@ -56,25 +55,31 @@ const rows = this.state.data.map((e,i) => {
     <tr key={i}>
       <td>{e.question}</td>
       <td>{e.answer}</td>
-      <td><button onClick={this.delete} data-id={e.id}>Usuń</button></td>
+      <td><i onClick={this.delete} data-id={e.id} className="fa fa-trash-o" aria-hidden="true"></i></td>
     </tr>
   )
 })
 
   return (
-    <div className={"main"}>
-      <table>
-        <thead>
-          <tr>
-            <td>Question</td>
-            <td>Answer</td>
-            <td>Delete</td>
-          </tr>
-        </thead>
-        <tbody>
-        { rows }
-        </tbody>
+    <div className="table_list">
+      <div className="tbl-header">
+      <table style={{cellpadding:"0", cellspacing:"0", border:"0"}}>
+          <thead>
+            <tr>
+              <td>Question</td>
+              <td>Answer</td>
+              <td>Delete</td>
+            </tr>
+          </thead>
       </table>
+      </div>
+      <div className="tbl-content">
+        <table style={{cellpadding:"0", cellspacing:"0", border:"0"}}>
+          <tbody>
+          { rows }
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

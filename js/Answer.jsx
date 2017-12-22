@@ -10,7 +10,7 @@ class Answer extends React.Component {
 render() {
   return (
     <div style={{textAlign:"center"}}>
-      <h1>Your answer: {this.props.answer}</h1>
+      <h1>Your answer: </h1>
       <input onChange={this.changeInput} type="text" name="text" value={this.props.answer}/>
     </div>
   )

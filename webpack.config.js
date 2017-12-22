@@ -4,7 +4,7 @@ const path =  require("path");
 
 module.exports = {
   entry: {
-    main: "./js/appek.jsx"
+    main: "./js/app.jsx"
   },
   devtool: 'source-map',
   output: {
