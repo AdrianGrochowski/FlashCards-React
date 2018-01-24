@@ -9,7 +9,7 @@ import {Router,
 } from 'react-router';
 
 class Button extends React.Component {
-// na klik wysylamy pytania i odpowiedzi na serwer/ tworzymy nowa fiszke
+// on click we send a new question and answer to json server
   click = (e) => {
 
     const obj = {
@@ -33,7 +33,7 @@ class Button extends React.Component {
       console.log( data );
       });
 
-      // czyscimy formularze
+      // clear forms
       this.props.clearForm();
     } else {
         e.target.style.backgroundColor = "rgb(212, 93, 93)";
